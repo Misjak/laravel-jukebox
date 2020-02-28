@@ -11,6 +11,14 @@
 |
 */
 
+use App\Http\Controllers\AuthorController;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+        // url when you go there it will run create method
+Route::get('/author/create', 'AuthorController@create');
+Route::post('/author', 'AuthorController@store');
+Route::get('/author/{id}/edit', 'AuthorController@edit');
+Route::put('/author/{id}', 'AuthorController@update');
